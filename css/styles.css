@@ -1,6 +1,10 @@
 :root {
   --header-background-color: #ffffff;
   --header-logo-color: #000000;
+  --body-color: #212121;
+  --index-title: #ffffff;
+  --index-text: #757575;
+  --index-title-background: #2f303a;
   --main-background-color: #ffffff;
   --main-btn-text-color-first: #212121;
   --main-btn-background-color-first: #f5f4fa;
@@ -14,14 +18,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-style: normal;
   background-color: var(--main-background-color);
-}
-
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
+  color: var(--body-color);
 }
 
 footer {
@@ -30,6 +29,15 @@ footer {
 
 address {
   font-style: normal;
+}
+
+/* --------------------------general classes--------------------- */
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
 }
 
 .visually-hidden {
@@ -71,22 +79,118 @@ address {
 }
 
 .navigation-link {
-  color: #212121;
+  color: var(--body-color);
 }
 
-.navigation-link:focus {
+.navigation-list .link.current {
+  color: var(--accent-color);
+}
+
+.navigation-link:focus,
+.navigation-link:hover {
   color: var(--accent-color);
 }
 
 .header-link-mail {
   color: #757575;
 }
+.header-link-mail:focus,
+.header-link-mail:hover {
+  color: var(--accent-color);
+}
 
 .header-link-tel {
   color: #757575;
 }
+.header-link-tel:focus,
+.header-link-tel:hover {
+  color: var(--accent-color);
+}
 
-/* main */
+/*---------------------------- main index--------------------------*/
+.index-main-section {
+  background-color: var(--index-title-background);
+}
+.main-index-title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: calc(60 / 44);
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--index-title);
+}
+.index-btn-order {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  color: var(--main-btn-text-color-second);
+  background-color: var(--accent-color);
+}
+.index-btn-order:focus,
+.index-btn-order:hover {
+  color: var(--main-btn-text-color-first);
+  background-color: var(--main-btn-background-color-first);
+}
+
+.index-features-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--body-color);
+}
+
+.index-features-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+  color: var(--index-text);
+}
+.index-title-offers {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: calc(42 / 36);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--body-color);
+}
+
+.index-title-team {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: calc(42 / 36);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--body-color);
+}
+.index-team-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--body-color);
+}
+
+.index-team-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--index-text);
+}
+
+/* -----------------------------main portfolio---------------------------------*/
 
 .hero-categories-button {
   font-family: inherit;
@@ -100,7 +204,13 @@ address {
   background-color: var(--main-btn-background-color-first);
 }
 
-.hero-categories-button:hover {
+.hero-categories-button:hover,
+.hero-categories-butto:focus {
+  color: var(--main-btn-text-color-second);
+  background-color: var(--accent-color);
+}
+
+.hero-categories-list .hero-categories-button.current {
   color: var(--main-btn-text-color-second);
   background-color: var(--accent-color);
 }
@@ -123,6 +233,19 @@ address {
 
 /* footer */
 
+.footer-link-map:hover,
+.footer-link-map:focus {
+  color: var(--accent-color);
+}
+.footer-link-mail:hover,
+.footer-link-mail:focus {
+  color: var(--accent-color);
+}
+.footer-link-tel:hover,
+.footer-link-tel:focus {
+  color: var(--accent-color);
+}
+
 .footer-logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -132,7 +255,7 @@ address {
   color: var(--footer-logo-color);
 }
 
-.footer-map {
+.footer-link-map {
   font-weight: 400;
   font-size: 14px;
   line-height: calc(24 / 14);
@@ -140,7 +263,7 @@ address {
   color: #ffffff;
 }
 
-.footer-mail {
+.footer-link-mail {
   font-weight: 400;
   font-size: 14px;
   line-height: calc(24 / 14);
@@ -148,7 +271,7 @@ address {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-tel {
+.footer-link-tel {
   font-weight: 400;
   font-size: 14px;
   line-height: calc(24 / 14);
